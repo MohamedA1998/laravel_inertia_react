@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Product/Create');
     }
 
     /**
@@ -30,7 +30,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        $product = Product::create($request->all());
+
+        return redirect()->route('product.index')->with('success','Product Created Successfuly');
     }
 
     /**
@@ -38,7 +45,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        // return 
     }
 
     /**

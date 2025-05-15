@@ -9,8 +9,9 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProductFactory> */
     use HasFactory, SoftDeletes;
+
+    protected $guarded = [];
 
     public static array $STATUS = ['active', 'inactive'];
     public static array $DISCOUNT_TYPE = ['percentage', 'fixed'];
