@@ -12,7 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Product/Index', [
+            'products'=> Product::latest()->paginate(10),
+        ]);
     }
 
     /**
