@@ -11,7 +11,6 @@ export default function Create()
     function submit(e) {
         e.preventDefault()
         post(route('product.store'), {
-            onSuccess: () => Alert('Successfuly Product Created'),
             onError: (error) => Alert((error['name'] || error['description']), 'Error !', 'error')
         })
     }

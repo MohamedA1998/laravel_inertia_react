@@ -37,7 +37,7 @@ class ProductController extends Controller
 
         $product = Product::create($request->all());
 
-        return redirect()->route('product.show', $product)->with('success','Product Created Successfuly');
+        return redirect()->route('product.index')->with('success','Product Created Successfuly From Backend');
     }
 
     /**
@@ -73,6 +73,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success', 'Successfuly Product Deleted From Backend');
     }
 }

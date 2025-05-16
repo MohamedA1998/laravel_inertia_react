@@ -7,7 +7,6 @@ export default function Show({product}) {
     function submit (e){
         e.preventDefault();
         destroy(route('product.destroy', product), {
-            onSuccess: () => Alert('Successfuly Product Deleted'),
             onError: (error) => Alert('We Have An Error', 'Oops...', 'error')
         })
     }
