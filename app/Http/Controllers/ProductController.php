@@ -37,7 +37,7 @@ class ProductController extends Controller
 
         $product = Product::create($request->all());
 
-        return redirect()->route('product.index')->with('success','Product Created Successfuly');
+        return redirect()->route('product.show', $product)->with('success','Product Created Successfuly');
     }
 
     /**
@@ -45,7 +45,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        // return 
+        return inertia('Product/Show', [
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -69,6 +71,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('product.index');
     }
 }
