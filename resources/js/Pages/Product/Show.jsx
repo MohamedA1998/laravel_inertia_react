@@ -1,4 +1,4 @@
-import { useForm } from "@inertiajs/react";
+import { Head, useForm } from "@inertiajs/react";
 import Alert from '../../Components/Alert'
 
 export default function Show({product}) {
@@ -12,6 +12,10 @@ export default function Show({product}) {
     }
 
     return (<>
+        <Head title={product.name}>
+            <meta head-key="description" name="description" content={`this for show single product ${product.description}`} />
+        </Head>
+
         <h1 className="title">Show Product </h1>
 
         <div>

@@ -1,9 +1,15 @@
-import { Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Paginate from '@/Components/Paginate';
 
 export default function Index({products})
 {
+    const {component} = usePage();
+
     return (<>
+        <Head title='Product Index'>
+            <meta head-key="description" name="description" content="This is the default description" />
+        </Head>
+
         <div>
             {products.data.map((product) => (
                 <div key={product.id} className="p-4 border-b">

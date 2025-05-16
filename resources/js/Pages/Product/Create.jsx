@@ -1,4 +1,4 @@
-import { useForm } from '@inertiajs/react'
+import { Head, useForm } from '@inertiajs/react'
 import Alert from '../../Components/Alert'
 
 export default function Create()
@@ -16,6 +16,8 @@ export default function Create()
     }
 
     return (<>
+        <Head title='Create Product' />
+
         <h1 className="title">Create New Product</h1>
 
         <div className="w-1/2 mx-auto">
