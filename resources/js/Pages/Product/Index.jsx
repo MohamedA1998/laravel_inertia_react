@@ -17,7 +17,7 @@ export default function Index({products})
         </div>
 
         <div className="py-12 px-4">
-            <Paginate props={products}/>
+            <Paginate links={products.links}/>
         </div>
     </>);
 }
