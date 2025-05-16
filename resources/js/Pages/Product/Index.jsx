@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import Paginate from '@/Components/Paginate';
 
 export default function Index({products})
@@ -10,6 +11,7 @@ export default function Index({products})
                     <div className="text-sm text-slate-600">
                         <span>Avelabel: {product.count}</span>
                     </div>
+                    <Link href={route("product.show", product)} className='text-link'>Read More...</Link>
                 </div>
             ))}
         </div>

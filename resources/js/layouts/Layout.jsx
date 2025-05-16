@@ -6,8 +6,8 @@ export default function Layout({children})
 
         <header>
             <nav>
-                <Link className="nav-link" href="/">Home</Link>
-                <Link className="nav-link" href="/product/create">Create</Link>
+                <Link className="nav-link" href={route('product.index')}>Home</Link>
+                <Link className="nav-link" href={route('product.create')}>Create</Link>
             </nav>
         </header>
 

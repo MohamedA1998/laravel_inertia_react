@@ -2,6 +2,8 @@ import './bootstrap';
 import { createInertiaApp } from '@inertiajs/react'
 import { createRoot } from 'react-dom/client'
 import Layout from './layouts/Layout';
+import { Ziggy } from './ziggy.js';
+globalThis.Ziggy = Ziggy;
 
 createInertiaApp({
   resolve: name => {
