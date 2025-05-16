@@ -1,4 +1,4 @@
-import { Head, useForm } from "@inertiajs/react";
+import { Head, Link, useForm } from "@inertiajs/react";
 import Alert from '../../Components/Alert'
 
 export default function Show({product}) {
@@ -26,6 +26,7 @@ export default function Show({product}) {
                 </div>
                 
                 <div className="flex items-center justify-end gap-2">
+                    <Link href={route('product.edit', product)} className="bg-green-500 rounded-md text-sm px-4 py-1 text-white">Update</Link>
                     <form onSubmit={submit}>
                         <button className="bg-red-500 rounded-md text-sm px-4 py-1 text-white">Delete</button>
                     </form>

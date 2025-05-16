@@ -55,7 +55,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return inertia('Product/Edit', [
+            'product'=> $product,
+        ]);
     }
 
     /**
@@ -63,7 +65,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name'=> 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        $product->update($request->all());
+
+        return redirect()->route('product.show', $product)->with('success','Product Updated Successfuly From Backend');
     }
 
     /**
