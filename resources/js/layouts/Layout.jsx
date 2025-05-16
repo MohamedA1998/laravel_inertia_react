@@ -3,11 +3,15 @@ import Alert from '../Components/Alert'
 
 export default function Layout({children})
 {
-    const { flash } = usePage().props
+    const { flash, errors } = usePage().props
+    
+    const firstError = Object.values(errors)[0];
+
+    {firstError && Alert(firstError, 'Opps ...', 'error')}
+
+    {flash.success && ( Alert(flash.success) )}
 
     return (<>
-        {flash.success && ( Alert(flash.success) )}
-
         <header>
             <nav>
                 <Link className="nav-link" href={route('product.index')}>Home</Link>

@@ -1,5 +1,4 @@
 import { Head, useForm } from '@inertiajs/react'
-import Alert from '../../Components/Alert'
 
 export default function Create()
 {
@@ -10,9 +9,7 @@ export default function Create()
 
     function submit(e) {
         e.preventDefault()
-        post(route('product.store'), {
-            onError: (error) => Alert((error['name'] || error['description']), 'Error !', 'error')
-        })
+        post(route('product.store'))
     }
 
     return (<>

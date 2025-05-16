@@ -1,9 +1,7 @@
 import { Head, useForm, usePage } from '@inertiajs/react'
-import Alert from '../../Components/Alert'
 
 export default function Edit({product})
 {
-    console.log(usePage().props);
     const {data, setData, put, errors, processing} = useForm({
         name: product.name,
         description: product.description
@@ -11,9 +9,7 @@ export default function Edit({product})
 
     function submit(e) {
         e.preventDefault()
-        put(route('product.update', product.id), {
-            onError: (error) => Alert((error['name'] || error['description']), 'Error !', 'error')
-        })
+        put(route('product.update', product.id))
     }
 
     return (<>

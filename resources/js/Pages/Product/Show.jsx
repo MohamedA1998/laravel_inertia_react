@@ -1,14 +1,11 @@
 import { Head, Link, useForm } from "@inertiajs/react";
-import Alert from '../../Components/Alert'
 
 export default function Show({product}) {
     const {delete: destroy} = useForm();
 
     function submit (e){
         e.preventDefault();
-        destroy(route('product.destroy', product), {
-            onError: (error) => Alert('We Have An Error', 'Oops...', 'error')
-        })
+        destroy(route('product.destroy', product))
     }
 
     return (<>
